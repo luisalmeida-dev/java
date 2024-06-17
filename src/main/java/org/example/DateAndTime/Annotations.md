@@ -128,3 +128,91 @@ LocalDateTime.getMonth();
 ```
 
 ### ZonedDatetime API
+1. Usada para quando precisamos trabalhar com fuso horário
+2. Disponibiliza um *ZoneId* para cada região.
+
+```java
+"Para criar uma zona especifica"
+ZoneId zoneId = ZoneId.of("Europe/Paris");
+```
+
+3. É possivel pegar uma SetList com todas as zonas disponíveis.
+```java
+Set<String> allZonesIds = ZoneId.getAvailableZoneIds();
+```
+
+4. *LocalDateTime* pode ser convertido para algum fuso-horário especifico
+```java
+ZonedDateTime zonedDateTime = ZonedDateTime.of(LocalDateTime, zoneId);
+```
+
+5. *ZonedDateTime* tem o metodo *parse* para pegar data e tempo especifico de um fuso.
+```java
+ZonedDateTime.parse("2015-05-03T10:15:30+01:00[Europe/Paris]");
+```
+
+6. Outra forma de mexer com fuso é utilizando a *OffsetDateTime*, é uma representação imutavel de uma data e tempo com um offset
+7. *OffsetDateTime* pode ser criado utilizando *ZoneOffset*
+```java
+"Primeiro criamos uma data e tempo"
+LocalDateTime localDateTime = LocalDateTime.of(2015, Month.FEBRUARY, 20, 06, 30);
+
+"Depois adicionamos 2 horas ao tempo criado utilizando a ZoneOffset e setando para o *LocalDateTime* que criamos"
+ZoneOffset offset = ZoneOffset.of("+02:00");
+
+OffsetDateTime offSetByTwo = OffsetDateTime.of(localDateTime, offset);
+```
+
+### Classes *Period* e *Duration*
+1. Esses representam um período de tempo em ano, mês e dias e o outro segundos e milisegundos respectivamente.
+
+#### Period
+* Essa classe é muito utilizada para alterar o valor de uma certa data ou obter a diferença entre duas datas.
+```java
+LocalDate initialDate = LocalDate.parse("2007-05-10");
+
+LocalDate finalDate = initialDate.plus(Period.ofDays(5));
+```
+
+* Também disponibiliza varios getters diferentes para o objeto Period
+```java
+"Esse código pega a diferença entre duas datas"
+int difference = Period.between(initialDate, finalDate).getDays();
+```
+
+* Também podemos pegar utilizando uma unidade especifica de tempo
+```java
+long difference = ChronoUnit.DAYS.between(initialDate, finalDate);
+```
+
+#### Duration
+* Similar a Period, é utilizada para trabalhar com tempo.
+```java
+"Código cria uma data e adiciona 30 segundos ao valor inicial"
+LocalTime initialTime = LocalTime.of(6, 30, 0);
+
+LocalTime finalTime = initialTime.plus(Duration.ofSeconds(30));
+```
+
+* Podemos pegar uma duração entre dois instantes como uma Duration ou unidade especifica
+```java
+long difference = Duration.between(intialTime, finaltime).getSeconds();
+
+long difference = ChronoUnit.SECONDS.between(intialDate, finalDate);
+```
+
+### Formatação de Data e tempo
+1. Java 8 tem APIs para facilitar a formatação
+```java
+"Cria uma data"
+LocalDateTime localDateTime = LocalDateTime.of(2015, Month.JANUARY, 25, 6, 30);
+
+"Formata a data para o padrao ISO que vai retornar 2015-05-25"
+String localDateString = localDateTime.format(DateTimeFormatter.ISO_DATE);
+```
+
+2. Podemos passar uma forma customizavel
+```java
+"Codigo retorna data formata assim: 2015/01/25"
+localDateTime.format(DateTimeFormatter.ofPatter("yyyy/MM/dd"));
+```
