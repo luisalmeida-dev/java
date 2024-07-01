@@ -30,3 +30,30 @@ como *vetores* ou *listas ligadas*, então ADT mostram *o que* tem que ser feito
 * *Eficiência:* Se a esolhar de uma estrutura para resolver uma DAT for correta, vai fazer o programa ser eficiênte no aspecto tempo e espaço.
 * *Reutilização:* Estruturas podem ser utilizadas por varios programas.
 * *Abstração:* Ao utilizar uma ADT o usuário não visualiza o processo interno da estrtutura de dados.
+
+## O que é estrutura de dados:
+* São diferentes forma de armazenar e organizar dados na memória do computador para facilitar o acesso e utilização desses dados.
+* O estudo das estruturas possibilita o entendimento da organização dos dados e do gerenciamento de fluxo deles de forma a aumentar a eficiência
+  de qualquer processo ou programa.
+
+## Classificação das estruturas de dados:
+* Podem ser classificadas de duas formas, **primitivas** e **não primitivas**.
+* Primitivas:
+  * São as estruturas que consistem de numeros e caracteres que vem embutidos nos programas
+  * Podem ser manipuladas ou operadas diretamente de instruções a nivel de maquina.
+  * Tipos basicos de dados como *Integer, Float, Character e Boolean* são tipos primitivos de estruturas de dados.
+  * Também são chamdas de *Tipo dado simples*, já que tem caracteres que não podem ser divididos posteriormente.
+* Não primitivos:
+  * São estruturas derivadas das *estruturas de dados primitivas*
+  * Não podem ser manipuladas ou operadas diretamente por instruções a nivel de maquina
+  * Tem o foco de formar um conjunto de elementos de dados que seja homogeneo (mesmo tipo) ou heterogeneo (tipos diferentes)
+  * Baseado na estrutura ou organização dos dados podemos dividir as estruturas em duas sub-categorias: Lineares e não lineares
+
+### Estruturas de dados Lineares:
+* Estrutura onde o arranjo dos dados é feito de forma linear, onde cada elemento consiste do sucessor e antecessor, exceto o primeiro e
+  ultimo elemento
+* Essas estruturas podem ser dividadas entre *estaticas* e *dinamicas*
+  * *Estáticas* são as que tem o tamanho fixo, a memória dessas estrturas são alocadas em tempo de compilação, então seu tamanho não
+    pode ser alterado pelo usuário após ser compilada; porém, os dados armazenados nela podem ser alterados.
+  * *Dinamicas* são as que tem um tamanho que pode variar, a memória é *alocada em tempo de execução* e o tamanho varia durante esse período,
+    além disso o usuário pode alterar tanto o tamanho quanto os elementos armazenados na estrutura no periodo de execução do código.
