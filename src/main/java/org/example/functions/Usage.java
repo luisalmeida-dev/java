@@ -1,4 +1,4 @@
-package org.example.Functions;
+package org.example.functions;
 
 public abstract class Usage {
 
