@@ -1,13 +1,21 @@
-package org.example.test;
+package org.example.stream;
 
+import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class testDemo {
+    /*
+    - Metodo @Before executa um metodo toda vez antes de fazer um teste.
+    - Ja o metodo @After executa toda vez depois de um teste.
+    - @BeforClass executa o metodo apenas uma vez para toda a classe.
+     */
+
     @Test
     public void deveSomarDoisNumeros() {
-        //Dependencia mock nao esta funcionando
 
         // Cria um mock de uma classe que realiza operações matemáticas
         Calculadora calculadora = mock(Calculadora.class);

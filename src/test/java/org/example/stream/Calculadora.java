@@ -1,4 +1,4 @@
-package org.example.test;
+package org.example.stream;
 
 public class Calculadora {
     public int somar(int i, int i1) {
